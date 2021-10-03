@@ -109,6 +109,7 @@ const AddNewMascot = ({ getMascots, navigation }) => {
         <View style={[styles.form]}>
           <Text style={styles.label}>Name</Text>
           <TextInput
+          testID="messageText"
             placeholder="Name (Required)"
             value={state.name}
             onChangeText={(text) => {
@@ -206,7 +207,7 @@ const AddNewMascot = ({ getMascots, navigation }) => {
               </TouchableOpacity>
             )}
           </View>
-          <TouchableOpacity onPress={addNewMascot} style={styles.buttonWrapper}>
+          <TouchableOpacity testID="Send" onPress={addNewMascot} style={styles.buttonWrapper}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Submit</Text>
             </View>
