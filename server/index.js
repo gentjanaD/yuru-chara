@@ -12,3 +12,5 @@ app.use(cors()).use(express.json()).use(router);
 app.listen(PORT, () => {
   console.log(`Listening on PORT 4000`);
 });
+
+module.exports = app;
