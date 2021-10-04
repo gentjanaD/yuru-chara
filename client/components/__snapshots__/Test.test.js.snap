@@ -27,6 +27,14 @@ exports[`Test should show hello world 1`] = `
     >
       Hello World!
     </Text>
+    <p>
+      Good to see you!
+    </p>
+    <button
+      onClick={[Function]}
+    >
+      Change Text!
+    </button>
   </View>
 </View>
 `;

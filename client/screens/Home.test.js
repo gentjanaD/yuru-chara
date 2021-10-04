@@ -3,7 +3,9 @@ import { render } from "@testing-library/react-native";
 
 import MascotList from "../components/MascotList";
 
-
-it("renders", () => {
+describe('Home test screen', () => {
+    it("renders", () => {
+    //Arrange
     render(<MascotList />);
+});
 });
