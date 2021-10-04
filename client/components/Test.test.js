@@ -1,6 +1,5 @@
 import React from 'react';
-import {cleanup, render} from '@testing-library/react-native';
-
+import {cleanup, render, screen} from '@testing-library/react-native';
 import Test from './Test';
 
 afterEach(cleanup);
@@ -16,4 +15,6 @@ describe('Test', () => {
     expect(foundHelloWorldText.props.children).toEqual(helloWorldText);
     expect(toJSON()).toMatchSnapshot();
   });
+
+
 });

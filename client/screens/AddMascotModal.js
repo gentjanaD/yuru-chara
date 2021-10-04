@@ -89,6 +89,7 @@ const AddNewMascot = ({ getMascots, navigation }) => {
   const japanInput = useRef();
   const representInput = useRef();
   const cityInput = useRef();
+  //console.log(cityInput.current.value)
   const prefectureInput = useRef();
   const descriptionInput = useRef();
 
