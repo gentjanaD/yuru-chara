@@ -1,14 +1,23 @@
 const request = require("supertest");
 const app = require("./index");
+const mongoose = require("mongoose");
+const { db } = require("./models/model.mascots");
+
+    describe("Test the root path", () => {
+        test("It should response the GET method", async() => {
+          const response = await request(app).get("/mascots");
+          expect(response.statusCode).toBe(200);
+        });
+      });
+    
 
 
-
-describe("Test the root path", () => {
-  test("It should response the GET method", async() => {
-    const response = await request(app).get("/mascots");
-    expect(response.statusCode).toBe(200);
-  });
-});
+// describe("Test the root path", () => {
+//   test("It should response the GET method", async() => {
+//     const response = await request(app).get("/mascots");
+//     expect(response.statusCode).toBe(200);
+//   });
+// });
 
 describe("POST /mascots", () => {
     describe("", () => {
@@ -42,17 +51,14 @@ describe("POST /mascots", () => {
 
 //Put testing 
 
-describe("PUT /mascots/:id", () => {
-    describe("", () => {
-  
-      test("should respond with a 200 status code", async () => {
-        const response = await request(app).put("/mascots/:id").send({
-            name: "mascot",
-            japanese: "tokio",
-            mascot: "mascot"
-        })
-        expect(response.statusCode).toBe(200)
+describe("PUT /mascots/:id", function () {
+    const id = "615ae27bde94be018bcdc4fc"
+    it("Respond with 200", function (done) {
 
-    }) 
-    })
+        request(app)
+            .put(`/mascots/${id}`)
+            .set('Accept', 'application/json')
+            .expect(200, done);
+
+    });
 });
