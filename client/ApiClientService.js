@@ -33,8 +33,17 @@ async function toggleFavourites(mascotId, favouriteStatus) {
     .catch((err) => console.log(err));
 }
 
+async function deleteMascot(mascotId) {
+  const id = mascotId;
+  const res = await fetch(`${MASCOTS_URL}/${id}`, {
+    method: "DELETE"
+  })
+  return await res.json()
+}
+
 module.exports = {
   fetchMascots,
   addMascot,
   toggleFavourites,
+  deleteMascot
 };

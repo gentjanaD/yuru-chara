@@ -49,4 +49,15 @@ async function toggleFavourite(req, res) {
   }
 }
 
-module.exports = { getAll, addMascot, toggleFavourite, getMascot };
+async function deleteMascot(req, res){
+  const {id} = req.params;
+  try {
+      const remove = await Mascot.findByIdAndDelete(id);
+      res.send(remove)
+  }catch(error) {
+      res.sendStatus(500);
+      console.log(error)
+  }
+}
+
+module.exports = { getAll, addMascot, toggleFavourite, getMascot, deleteMascot };
