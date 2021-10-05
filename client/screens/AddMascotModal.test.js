@@ -17,7 +17,7 @@ describe('Add Mascot', () => {
     it('Clears the message field', () => {
       let { getByTestId } = render(<AddMascotModal />);
 
-      fireEvent.changeText(getByTestId('messageText'), 'Empty');
+      fireEvent.changeText(getByTestId('messageText'), '');
       fireEvent.press(getByTestId('Send'));
 
       expect(getByTestId('messageText').props.value).toEqual('');

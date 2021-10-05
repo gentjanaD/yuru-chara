@@ -1,16 +1,9 @@
-const express = require('express');
-const cors = require('cors');
-
-const app = express();
-
-const PORT = 4000;
-
-const router = require('./router');
-
+var express = require("express");
+var cors = require("cors");
+var router = require("./router");
+var app = express();
+var PORT = 4000;
 app.use(cors()).use(express.json()).use(router);
-
-app.listen(PORT, () => {
-  console.log(`Listening on PORT 4000`);
+app.listen(PORT, function () {
+    console.log("Listening on PORT 4000");
 });
-
-module.exports = app;
