@@ -48,3 +48,15 @@ exports.toggleFavourite = async(req:Request, res:Response) => {
       res.sendStatus(500);
     }
   }
+
+exports.deleteMascot = async(req:Request, res:Response) => {
+    try {
+        const id = req.params._id;
+        await Mascot.findByIdAndRemove(id);
+        res.status(200);
+        res.end()
+    }catch(error) {
+        res.sendStatus(500);
+        console.log(error)
+    }
+}
