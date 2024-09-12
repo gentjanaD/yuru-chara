@@ -1,4 +1,4 @@
-const MASCOTS_URL = 'http://10.10.22.236:4000/mascots';
+const MASCOTS_URL = 'http://10.10.22.70:4000/mascots';
 
 async function fetchMascots() {
   return fetch(MASCOTS_URL)
@@ -33,8 +33,17 @@ async function toggleFavourites(mascotId, favouriteStatus) {
     .catch((err) => console.log(err));
 }
 
+async function deleteMascot(mascotId) {
+  const id = mascotId;
+  const res = await fetch(`${MASCOTS_URL}/${id}`, {
+    method: "DELETE"
+  })
+  return await res.json()
+}
+
 module.exports = {
   fetchMascots,
   addMascot,
   toggleFavourites,
+  deleteMascot
 };

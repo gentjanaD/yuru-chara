@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
-
+import { Text, View, StyleSheet, Image,Button } from 'react-native';
+import { deleteMascot } from '../ApiClientService';
 const MascotCard = ({ name, mascot }) => {
   return (
     <View style={styles.box}>
@@ -11,6 +11,7 @@ const MascotCard = ({ name, mascot }) => {
         }}
       />
       <Text style={styles.text}>{name}</Text>
+      <Button title="✘" onPress={deleteMascot}></Button>
     </View>
   );
 };
